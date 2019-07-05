@@ -95,7 +95,6 @@ app.put('/image', (req, res) => {
 		.catch(err => res.status(400).json('unable to get entries'))
 })
 
-const DATABASE_URL = process.env.DATABASE_URL;
-app.listen(PORT, () => {
-	console.log(`Client connected on port ${DATABASE_URL}`)
+app.listen(process.env.PORT || 3000, () => {
+	console.log(`Client connected on port ${process.env.PORT}`)
 })
